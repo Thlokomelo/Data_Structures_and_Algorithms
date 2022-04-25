@@ -1,0 +1,214 @@
+var Dancers = ['F Allison McMillan', 'M Frank Opitz', 'M Mason McMillan', 'M Clayton Ruff', 'F Cheryl Ferenback', 'M Raymond Williams', 'F Jennifer Ingram', 'M Bryan Frazer', 'M David Durr', 'M Danny Martin', 'F Aurora Adney'];
+undefined
+function Dancer(name, sex) {
+ this.name = name;
+ this.sex = sex;
+}
+
+undefined
+function getDancers(males, females) {
+ var names = Dancers
+ for (var i = 0; i < names.length; ++i) {
+ names[i] = names[i].trim();
+ }
+ for (var i = 0; i < names.length; ++i) {
+ var dancer = names[i].split(" ");
+ var sex = dancer[0];
+ var name = dancer[1];
+ if (sex == "F") {
+ females.enqueue(new Dancer(name, sex));
+ }
+ else {
+ males.enqueue(new Dancer(name, sex));
+ }
+ }
+}
+undefined
+function dance(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = males.dequeue();
+ console.log(" and the male dancer is: " + person.name);
+ }
+console.log();
+}
+
+undefined
+function Queue() {
+ this.dataStore = [];
+ this.enqueue = enqueue;
+ this.dequeue = dequeue;
+ this.front = front;
+ this.back = back;
+ this.toString = toString;
+ this.empty = empty;
+}
+ 
+undefined
+function enqueue(element) {
+ this.dataStore.push(element);
+}
+function dequeue() {
+ return this.dataStore.shift();
+}
+function front() {
+ return this.dataStore[0];
+}
+function back() {
+ return this.dataStore[this.dataStore.length-1];
+}
+function toString() {
+ var retStr = "";
+ for (var i = 0; i < this.dataStore.length; ++i) {
+ retStr += this.dataStore[i] + "\n";
+ }
+ return retStr;
+}
+function empty() {
+ if (this.dataStore.length == 0) {
+ return true;
+ }
+ else {
+ return false;
+ }
+}
+function Dancer(name, sex) {
+ this.name = name;
+ this.sex = sex;
+}
+
+undefined
+function getDancers(males, females) {
+ var names = Dancers
+ for (var i = 0; i < names.length; ++i) {
+ names[i] = names[i].trim();
+ }
+ for (var i = 0; i < names.length; ++i) {
+ var dancer = names[i].split(" ");
+ var sex = dancer[0];
+ var name = dancer[1];
+ if (sex == "F") {
+ femaleDancers.enqueue(new Dancer(name, sex));
+     }
+ else {
+ maleDancers.enqueue(new Dancer(name, sex));
+ }
+ }
+}
+
+undefined
+function dance(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = males.dequeue();
+ console.log(" and the male dancer is: " + person.name);
+ }
+console.log();
+}
+undefined
+var maleDancers = new Queue();
+var femaleDancers = new Queue();
+getDancers(maleDancers, femaleDancers);
+dance(maleDancers, femaleDancers);
+if (!femaleDancers.empty()) {
+ console.log(femaleDancers.front().name + " is waiting to dance.");
+}
+if (!maleDancers.empty()) {
+ console.log(maleDancers.front().name + " is waiting to dance.");
+}
+
+VM1065:2 The dance partners are: 
+
+VM1065:5 Uncaught ReferenceError: putstr is not defined
+    at dance (<anonymous>:5:2)
+    at <anonymous>:4:1
+dance @ VM1065:5
+(anonymous) @ VM1135:4
+dance;
+ƒ dance(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = ma…
+function Dancers(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = males.dequeue();
+ console.log(" and the male dancer is: " + person.name);
+ }
+console.log();
+}
+undefined
+var maleDancers = new Queue();
+var femaleDancers = new Queue();
+getDancers(maleDancers, femaleDancers);
+dance(maleDancers, femaleDancers);
+if (!femaleDancers.empty()) {
+ console.log(femaleDancers.front().name + " is waiting to dance.");
+}
+if (!maleDancers.empty()) {
+ console.log(maleDancers.front().name + " is waiting to dance.");
+}
+VM962:4 Uncaught TypeError: Cannot read properties of undefined (reading 'trim')
+    at getDancers (<anonymous>:4:22)
+    at <anonymous>:3:1
+getDancers @ VM962:4
+(anonymous) @ VM1173:3
+Dancers;
+ƒ Dancers(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = …
+function Dancer(males, females) {
+console.log("The dance partners are: \n");
+ while (!females.empty() && !males.empty()) {
+ person = females.dequeue();
+ putstr("Female dancer is: " + person.name);
+ person = males.dequeue();
+ console.log(" and the male dancer is: " + person.name);
+ }
+console.log();
+}
+undefined
+var maleDancers = new Queue();
+var femaleDancers = new Queue();
+getDancers(maleDancers, femaleDancers);
+dance(maleDancers, femaleDancers);
+if (!femaleDancers.empty()) {
+ console.log(femaleDancers.front().name + " is waiting to dance.");
+}
+if (!maleDancers.empty()) {
+ console.log(maleDancers.front().name + " is waiting to dance.");
+}
+VM962:4 Uncaught TypeError: Cannot read properties of undefined (reading 'trim')
+    at getDancers (<anonymous>:4:22)
+    at <anonymous>:3:1
+getDancers @ VM962:4
+(anonymous) @ VM1224:3
+var maleDancers = new Queue();
+var femaleDancers = new Queue();
+getDancers(maleDancers, femaleDancers);
+dance(maleDancers, femaleDancers);
+if (maleDancers.count() > 0) {
+ console.logprint("There are " + maleDancers.count() +
+ " male dancers waiting to dance.");
+}
+if (femaleDancers.count() > 0) {
+ console.log("There are " + femaleDancers.count() +
+ " female dancers waiting to dance.");
+}
+
+VM962:4 Uncaught TypeError: Cannot read properties of undefined (reading 'trim')
+    at getDancers (<anonymous>:4:22)
+    at <anonymous>:3:1
+getDancers @ VM962:4
+(anonymous) @ VM1294:3

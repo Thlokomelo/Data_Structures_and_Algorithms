@@ -1,0 +1,236 @@
+function put(data) {
+ var pos = this.betterHash(data);
+ this.table[pos] = data;
+}
+function simpleHash(data) {
+ var total = 0;
+ for (var i = 0; i < data.length; ++i) {
+ total += data.charCodeAt(i);
+ }
+ console.log("Hash value: " + data + " -> " + total);
+ return total % this.table.length;
+}
+function showDistro() {
+ var n = 0;
+ for (var i = 0; i < this.table.length; ++i) {
+ if (this.table[i] != undefined) {
+console.log(i + ": " + this.table[i]);
+ }
+ }
+}
+function betterHash(string) {
+ const H = 37;
+ var total = 0;
+ for (var i = 0; i < string.length; ++i) {
+ total += H * total + string.charCodeAt(i);
+ }
+ total = total % this.table.length;
+ if (total < 0) {
+ total += this.table.length-1;
+ }
+ return parseInt(total);
+}
+
+undefined
+function getRandomInt (min, max) {
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function genStuData(arr) {
+ for (var i = 0; i < arr.length; ++i) {
+ var num = "";
+ for (var j = 1; j <= 9; ++j) {
+ num += Math.floor(Math.random() * 10);
+ }
+ num += getRandomInt(50,100);
+ arr[i] = num;
+ }
+}
+
+undefined
+var numStudents = 10;
+var arrSize = 97;
+var idLen = 9;
+var students = new Array(numStudents);
+genStuData(students);
+print ("Student data: \n");
+for (var i = 0; i < students.length; ++i) {
+console.log(students[i].substring(0,8) + " " +
+ students[i].substring(9));
+}
+VM346:8 86219573 86
+VM346:8 64310487 91
+VM346:8 57108393 67
+VM346:8 38675192 98
+VM346:8 40519822 63
+VM346:8 90394911 60
+VM346:8 08308627 55
+VM346:8 64404438 64
+VM346:8 45541456 74
+VM346:8 27050576 65
+undefined
+var numStudents = 10;
+var arrSize = 97;
+var idLen = 9;
+var students = new Array(numStudents);
+genStuData(students);
+print ("Student data: \n");
+for (var i = 0; i < students.length; ++i) {
+ console.log(students[i].substring(0,8) + " " +
+ students[i].substring(9));
+}
+
+VM391:8 38465657 78
+VM391:8 59135564 59
+VM391:8 74418497 51
+VM391:8 75732028 84
+VM391:8 17953802 97
+VM391:8 63681899 87
+VM391:8 70652714 95
+VM391:8 62779330 94
+VM391:8 63168440 71
+VM391:8 98666875 68
+undefined
+var numStudents = 10;
+var arrSize = 97;
+var idLen = 9;
+var students = new Array(numStudents);
+genStuData(students);
+console.log ("Student data: \n");
+VM469:6 Student data: 
+
+undefined
+console.log("\n\nData distribution: \n");
+var hTable = new HashTable();
+for (var i = 0; i < students.length; ++i) {
+ hTable.put(students[i]);
+}
+
+VM506:1 
+
+Data distribution: 
+
+undefined
+hTable.showDistro();
+VM291:17 15: 05546312268
+VM291:17 17: 38664809756
+VM291:17 62: 45360801583
+VM291:17 71: 02840358479
+VM291:17 81: 00569274163
+VM291:17 91: 59427757887
+VM291:17 99: 48737568879
+VM291:17 117: 18859228761
+VM291:17 135: 13033525496
+undefined
+console.log ("Student data: \n");
+VM514:1 Student data: 
+
+undefined
+print ("Student data: \n");
+for (var i = 0; i < students.length; ++i) {
+ console.log(students[i].substring(0,8) + " " +
+ students[i].substring(9));
+}
+VM519:3 13033525 96
+VM519:3 02840358 79
+VM519:3 08612744 63
+VM519:3 05546312 68
+VM519:3 48737568 79
+VM519:3 18859228 61
+VM519:3 45360801 83
+VM519:3 59427757 87
+VM519:3 00569274 63
+VM519:3 38664809 56
+undefined
+console.log ("Student data: \n");
+for (var i = 0; i < students.length; ++i) {
+ console.log(students[i].substring(0,8) + " " +
+ students[i].substring(9));
+}
+VM564:1 Student data: 
+
+VM564:3 13033525 96
+VM564:3 02840358 79
+VM564:3 08612744 63
+VM564:3 05546312 68
+VM564:3 48737568 79
+VM564:3 18859228 61
+VM564:3 45360801 83
+VM564:3 59427757 87
+VM564:3 00569274 63
+VM564:3 38664809 56
+undefined
+console.log("\n\nData distribution: \n");
+var hTable = new HashTable();
+for (var i = 0; i < students.length; ++i) {
+ hTable.put(students[i]);
+}
+VM569:1 
+
+Data distribution: 
+
+undefined
+console.log("\n\nData distribution: \n");
+var hTable = new HashTable();
+for (var i = 0; i < students.length; ++i) {
+ hTable.put(students[i]);
+}
+hTable.showDistro();
+
+VM605:1 
+
+Data distribution: 
+
+VM291:17 15: 05546312268
+VM291:17 17: 38664809756
+VM291:17 62: 45360801583
+VM291:17 71: 02840358479
+VM291:17 81: 00569274163
+VM291:17 91: 59427757887
+VM291:17 99: 48737568879
+VM291:17 117: 18859228761
+VM291:17 135: 13033525496
+undefined
+var numStudents = 10;
+var arrSize = 97;
+var idLen = 9;
+var students = new Array(numStudents);
+genStuData(students);
+console.log ("Student data: \n");
+for (var i = 0; i < students.length; ++i) {
+console.log(students[i].substring(0,8) + " " +
+ students[i].substring(9));
+}
+console.log("\n\nData distribution: \n");
+var hTable = new HashTable();
+for (var i = 0; i < students.length; ++i) {
+ hTable.put(students[i]);
+}
+hTable.showDistro();
+
+VM684:6 Student data: 
+
+VM684:8 08972979 62
+VM684:8 05175766 90
+VM684:8 20723164 99
+VM684:8 86749561 78
+VM684:8 51826955 83
+VM684:8 41833771 81
+VM684:8 26149067 81
+VM684:8 73136981 72
+VM684:8 86077402 93
+VM684:8 16883896 92
+VM684:11 
+
+Data distribution: 
+
+VM291:17 17: 16883896192
+VM291:17 21: 41833771481
+VM291:17 40: 73136981472
+VM291:17 43: 51826955083
+VM291:17 44: 05175766190
+VM291:17 51: 86077402293
+VM291:17 60: 20723164199
+VM291:17 87: 26149067581
+VM291:17 121: 86749561378
+undefined

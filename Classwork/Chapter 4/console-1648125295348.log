@@ -1,0 +1,183 @@
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.length = length;
+    this.clear = clear;
+}
+
+undefined
+
+function push(element) {
+    this.dataStore[this.top++] = element;
+}
+
+
+function pop() {
+    return this.dataStore[--this.top];
+}
+
+
+function peek() {
+    return this.dataStore[this.top - 1];
+}
+
+
+function length() {
+    return this.top;
+}
+
+function clear() {
+    this.top = 0;
+}
+undefined
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.clear = clear;
+    this.length = length;
+}
+undefined
+function push(element) {
+    this.dataStore[this.top++] = element;
+}
+function peek() {
+    return this.dataStore[this.top - 1];
+}
+function pop() {
+    return this.dataStore[--this.top];
+}
+function clear() {
+    this.top = 0;
+}
+function length() {
+    return this.top;
+}
+undefined
+var s = new Stack();
+s.push("David");
+s.push("Raymond");
+s.push("Bryan");
+console.log("length: " + s.length());
+VM7378:5 length: 3
+undefined
+console.log(s.peek());
+VM7382:1 Bryan
+undefined
+var popped = s.pop();
+undefined
+console.log("The popped element is: " + popped);
+VM7390:1 The popped element is: Bryan
+undefined
+console.log(s.peek());
+VM7394:1 Raymond
+undefined
+s.push("Cynthia");
+undefined
+console.log(s.peek());
+VM7402:1 Cynthia
+undefined
+s.clear();
+undefined
+console.log("length: " + s.length());
+VM7410:1 length: 0
+undefined
+console.log(s.peek());
+VM7414:1 undefined
+undefined
+s.push("Clayton");
+undefined
+console.log(s.peek());
+VM7422:1 Clayton
+undefined
+function mulBase(num, base) {
+ var s = new Stack();
+ do {
+ s.push(num % base);
+ num = Math.floor(num /= base);
+ } while (num > 0);
+ var converted = "";
+ while (s.length() > 0) {
+ converted += s.pop();
+ }
+ return converted;
+}
+undefined
+var num = 32;
+var base = 2;
+var newNum = mulBase(num, base);
+undefined
+console.log(num + " converted to base " + base + " is " + newNum);
+
+VM7491:1 32 converted to base 2 is 100000
+undefined
+num = 125;
+base = 8;
+var newNum = mulBase(num, base);
+
+8
+console.log(num + " converted to base " + base + " is " + newNum);
+
+VM7532:1 125 converted to base 8 is 175
+undefined
+function isPalindrome(word) {
+ var s = new Stack();
+ for (var i = 0; i < word.length; ++i) {
+ s.push(word[i]);
+ }
+ var rword = "";
+ while (s.length() > 0) {
+ rword += s.pop();
+ }
+ if (word == rword) {
+ return true;
+ }
+ else {
+     return false;
+ }
+}
+
+undefined
+var word = "hello";
+undefined
+if (isPalindrome(word)) {
+ console.log(word + " is a palindrome.");
+}
+else {
+ console.log(word + " is not a palindrome.");
+}
+word = "racecar"
+if (isPalindrome(word)) {
+ console.log(word + " is a palindrome.");
+}
+else {
+ console.log(word + " is not a palindrome.");
+}
+VM7708:5 hello is not a palindrome.
+VM7708:9 racecar is a palindrome.
+undefined
+function fact(n) {
+    var s = new Stack();
+    while (n > 1) {
+    s.push(n--);
+    }
+    var product = 1;
+    while (s.length() > 0) {
+    product *= s.pop();
+    }
+    return product;
+   }
+undefined
+console.log(factorial(5));
+VM7754:1 120
+undefined
+print(fact(5));
+undefined
+console.log(fact(5));
+VM7816:1 120
+undefined

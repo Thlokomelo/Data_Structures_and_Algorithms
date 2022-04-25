@@ -1,0 +1,194 @@
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.length = length;
+    this.clear = clear;
+}
+
+function push(element) {
+    this.dataStore[this.top++] = element;
+}
+
+
+function pop() {
+    return this.dataStore[--this.top];
+}
+
+
+function peek() {
+    return this.dataStore[this.top - 1];
+}
+
+
+function length() {
+    return this.top;
+}
+
+function clear() {
+    this.top = 0;
+}
+
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.clear = clear;
+    this.length = length;
+}
+
+function push(element) {
+    this.dataStore[this.top++] = element;
+}
+function peek() {
+    return this.dataStore[this.top - 1];
+}
+function pop() {
+    return this.dataStore[--this.top];
+}
+function clear() {
+    this.top = 0;
+}
+function length() {
+    return this.top;
+}
+undefined
+names = [];
+
+[]length: 0[[Prototype]]: Array(0)
+names.push("Cynthia");
+names.push("Jennifer");
+
+2
+console.log(names);
+VM77:1 (2) ['Cynthia', 'Jennifer']
+undefined
+names.shift();
+
+'Cynthia'
+console.log(names);
+VM86:1 ['Jennifer']
+undefined
+function Queue() {
+ this.dataStore = [];
+ this.enqueue = enqueue;
+ this.dequeue = dequeue;
+ this.front = front;
+ this.back = back;
+ this.toString = toString;
+ this.empty = empty;
+}
+undefined
+function enqueue(element) {
+ this.dataStore.push(element);
+}
+
+undefined
+function dequeue() {
+ return this.dataStore.shift();
+}
+
+
+undefined
+function front() {
+ return this.dataStore[0];
+}
+undefined
+function back() {
+ return this.dataStore[this.dataStore.length-1];
+}
+
+undefined
+function toString() {
+ var retStr = "";
+ for (var i = 0; i < this.dataStore.length; ++i) {
+ retStr += this.dataStore[i] + "\n";
+ }
+ return retStr;
+}
+undefined
+function empty() {
+ if (this.dataStore.length == 0) {
+ return true;
+ }
+ else {
+ return false;
+ }
+}
+undefined
+function Queue() {
+ this.dataStore = [];
+ this.enqueue = enqueue;
+ this.dequeue = dequeue;
+ this.front = front;
+ this.back = back;
+ this.toString = toString;
+ this.empty = empty;
+}
+undefined
+function enqueue(element) {
+ this.dataStore.push(element);
+}
+function dequeue() {
+ return this.dataStore.shift();
+}
+function front() {
+ return this.dataStore[0];
+}
+function back() {
+ return this.dataStore[this.dataStore.length-1];
+}
+function toString() {
+ var retStr = "";
+ for (var i = 0; i < this.dataStore.length; ++i) {
+ retStr += this.dataStore[i] + "\n";
+ }
+ return retStr;
+}
+function empty() {
+ if (this.dataStore.length == 0) {
+ return true;
+ }
+ else {
+ return false;
+ }
+}
+undefined
+var q = new Queue();
+q.enqueue("Meredith");
+q.enqueue("Cynthia");
+q.enqueue("Jennifer");
+
+
+undefined
+console.log(q.toString());
+VM197:1 Meredith
+Cynthia
+Jennifer
+
+undefined
+q.dequeue();
+
+'Meredith'
+print(q.toString());
+
+undefined
+console.log(q.toString());
+
+VM250:1 Cynthia
+Jennifer
+
+undefined
+console.log(q.toString());
+
+VM293:1 Cynthia
+Jennifer
+
+undefined
+console.log("Back of queue: " + q.back());
+VM330:1 Back of queue: Jennifer
+undefined
